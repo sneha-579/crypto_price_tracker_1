@@ -1,0 +1,24 @@
+# templates/index.html
+"""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Price Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cryptocurrency Price Tracker</h1>
+        <form method="POST">
+            <input type="text" name="coin" placeholder="Enter coin (e.g., bitcoin)" required>
+            <button type="submit">Get Price</button>
+        </form>
+        {% if price_data %}
+            <h2>{{ coin.capitalize() }} Price: ${{ price_data['usd'] }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
+"""
